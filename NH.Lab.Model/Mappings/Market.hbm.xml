@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="NH.Lab.Model" namespace="NH.Lab.Model.Domain">
+
+  <class name="Market">
+    
+    <id name="Id">
+      <generator class="guid" />
+    </id>
+
+    <property name="Name" length="100" />
+
+    <property name="Address"  />
+
+  </class>
+  
+</hibernate-mapping>
