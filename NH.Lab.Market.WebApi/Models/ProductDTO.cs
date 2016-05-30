@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NH.Lab.Market.API
+namespace NH.Lab.Market.WebApi.Models
 {
     public class ProductDTO
     {

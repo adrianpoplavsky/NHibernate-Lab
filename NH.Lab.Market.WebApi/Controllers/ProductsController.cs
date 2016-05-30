@@ -1,10 +1,11 @@
-﻿using NH.Lab.Model.Domain;
+﻿using NH.Lab.Market.WebApi.Models;
+using NH.Lab.Model.Domain;
 using NHibernate.Criterion;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace NH.Lab.Market.API
+namespace NH.Lab.Market.Controllers
 {
     public class ProductsController : ApiController
     {

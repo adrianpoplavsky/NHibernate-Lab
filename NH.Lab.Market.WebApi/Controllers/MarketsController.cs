@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Http;
 
-namespace NH.Lab.Market.API
+namespace NH.Lab.Market.Controllers
 {
     public class MarketsController : ApiController
     {

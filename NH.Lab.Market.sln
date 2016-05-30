@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NH.Lab.Market", "NH.Lab.Market\NH.Lab.Market.csproj", "{07717A4B-3BBE-4767-8F37-40D233DD4E05}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NH.Lab.Model", "NH.Lab.Model\NH.Lab.Model.csproj", "{2145A769-BC2B-42BC-B555-2AAA97F5F181}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NH.Lab.Market.WebApi", "NH.Lab.Market.WebApi\NH.Lab.Market.WebApi.csproj", "{94ED12D4-EE68-45A6-8EA8-F174A528D69B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{2145A769-BC2B-42BC-B555-2AAA97F5F181}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2145A769-BC2B-42BC-B555-2AAA97F5F181}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2145A769-BC2B-42BC-B555-2AAA97F5F181}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94ED12D4-EE68-45A6-8EA8-F174A528D69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94ED12D4-EE68-45A6-8EA8-F174A528D69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94ED12D4-EE68-45A6-8EA8-F174A528D69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94ED12D4-EE68-45A6-8EA8-F174A528D69B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

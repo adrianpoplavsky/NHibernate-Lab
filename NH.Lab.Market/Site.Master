@@ -14,7 +14,8 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <script>var rootWebApiURL = "http://localhost:48921/";
+    </script>
 </head>
 <body>
     <form runat="server">
@@ -51,14 +52,14 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" >@adrianpoplavsky</a></li>
-                        <li><a runat="server" >Pull requests are welcomed</a></li>
+                        <li><a runat="server">@adrianpoplavsky</a></li>
+                        <li><a runat="server">Pull requests are welcomed</a></li>
                     </ul>
                 </div>
             </div>
 
         </div>
-        <div id="overallProgressHeader" class="progress" style="position:fixed;width:100%;z-index:10">
+        <div id="overallProgressHeader" class="progress" style="position: fixed; width: 100%; z-index: 10">
             <div id="overallProgress" class="progress-bar progress-bar-info"
                 role="progressbar" aria-valuenow="50"
                 aria-valuemin="0" aria-valuemax="100">

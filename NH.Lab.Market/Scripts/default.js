@@ -8,7 +8,7 @@ function getMarkets(ddlMarkets, ddlMarketsForProducts) {
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', loadingProgress + '%').attr('aria-valuenow', loadingProgress);
 
-    $.getJSON("api/markets")
+    $.getJSON(rootWebApiURL + "api/markets")
         .done(function (data) {
             $.each(data, function (index, value) {
                 ddlMarkets.append($('<option></option>').val(value.Id).html(value.Name));
@@ -40,7 +40,7 @@ function getProducts(ddlProducts) {
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', loadingProgress + '%').attr('aria-valuenow', loadingProgress);
 
-    $.getJSON("api/products")
+    $.getJSON(rootWebApiURL + "api/products")
         .done(function (data) {
             $.each(data, function (index, value) {
                 ddlProducts.append(
@@ -73,7 +73,7 @@ function addProduct() {
 
     var newProduct = { Name: txtProductName.val(), Market: { Id: ddlMarketForProduct.val() } };
 
-    $.post("api/products", newProduct)
+    $.post(rootWebApiURL + "api/products", newProduct)
         .done(function (data) {
             addProgress = 100;
 
@@ -101,7 +101,7 @@ function addMarket() {
 
     var newMarket = { Name: txtNombre.val(), Address: txtAddress.val() };
 
-    $.post("api/markets", newMarket)
+    $.post(rootWebApiURL + "api/markets", newMarket)
         .done(function (data) {
 
             addProgress = 100;
@@ -127,7 +127,7 @@ function getByProductName() {
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
 
-    $.getJSON("api/Products/GetByProductName?txtProductName=" + txtProductSearch.val())
+    $.getJSON(rootWebApiURL + "api/Products/GetByProductName?txtProductName=" + txtProductSearch.val())
     .done(function (data) {
 
         $('#products tbody > tr').remove();
@@ -160,7 +160,7 @@ function getByProductNameWithoutSession() {
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
 
-    $.getJSON("api/Products/GetByProductNameWithoutSession?txtProductName=" + txtProductSearch.val())
+    $.getJSON(rootWebApiURL + "api/Products/GetByProductNameWithoutSession?txtProductName=" + txtProductSearch.val())
     .done(function (data) {
 
         $('#products tbody > tr').remove();

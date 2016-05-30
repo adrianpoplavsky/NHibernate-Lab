@@ -5,7 +5,7 @@
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
 
-    $.getJSON("api/Configuration/CheckSchema")
+    $.getJSON(rootWebApiURL + "api/Configuration/CheckSchema")
         .done(function (data) {
             addProgress = 100;
 
@@ -31,7 +31,7 @@ function createSchema() {
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
 
-    $.getJSON("api/Configuration/CreateSchema")
+    $.getJSON(rootWebApiURL + "api/Configuration/CreateSchema")
         .done(function (data) {
             addProgress = 100;
 
