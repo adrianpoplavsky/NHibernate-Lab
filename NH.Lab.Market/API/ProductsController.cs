@@ -44,11 +44,26 @@ namespace NH.Lab.Market.API
                 var products = session.QueryOver<Product>()
                     .Where(Restrictions.On<Product>(x => x.Name).IsLike(searched))
                     .List<Product>()
-                    .Select(x => { return new ProductDTO { Id = x.Id, Name = x.Name }; })
+                    .Select(x => { return new ProductDTO { Id = x.Id, Name = x.Name, MarketDescrip = x.Market.Name }; })
                     .ToList();
 
                 return products;
             }
+        }
+        public IList<ProductDTO> GetByProductNameWithoutSession(string txtProductName)
+        {
+            var searched = "%" + txtProductName + "%";
+            List<Product> products = new List<Product>();
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                products = session.QueryOver<Product>()
+                    .Where(Restrictions.On<Product>(x => x.Name).IsLike(searched))
+                    .List<Product>()
+                    .ToList();
+            }
+
+            return products.Select(x => { return new ProductDTO { Id = x.Id, Name = x.Name, MarketDescrip = x.Market.Name }; }).ToList();
         }
     }
 }

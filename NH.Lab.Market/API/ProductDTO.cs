@@ -6,5 +6,6 @@ namespace NH.Lab.Market.API
     {
         public Guid Id { get; internal set; }
         public string Name { get; set; }
+        public string MarketDescrip { get; set; }
     }
 }

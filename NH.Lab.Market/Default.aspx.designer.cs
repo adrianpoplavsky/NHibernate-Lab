@@ -121,15 +121,6 @@ namespace NH.Lab.Market {
         protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
-        /// grdMarkets control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdMarkets;
-        
-        /// <summary>
         /// txtProductSearch control.
         /// </summary>
         /// <remarks>
@@ -146,15 +137,6 @@ namespace NH.Lab.Market {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnProductSearch;
-        
-        /// <summary>
-        /// grdProductResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdProductResults;
         
         /// <summary>
         /// btnProductSearchNoSession control.

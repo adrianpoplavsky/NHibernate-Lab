@@ -74,7 +74,7 @@ function addProduct() {
     var newProduct = { Name: txtProductName.val(), Market: { Id: ddlMarketForProduct.val() } };
 
     $.post("api/products", newProduct)
-        .done(function (data) {           
+        .done(function (data) {
             addProgress = 100;
 
             $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
@@ -98,7 +98,7 @@ function addMarket() {
 
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
-    
+
     var newMarket = { Name: txtNombre.val(), Address: txtAddress.val() };
 
     $.post("api/markets", newMarket)
@@ -121,21 +121,67 @@ function addMarket() {
         });
 }
 
-function getByProductName(txtproductName) {
+function getByProductName() {
     var addProgress = 50;
 
     $('#overallProgressHeader').addClass("progress-striped active");
     $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
 
-    $.getJSON("api/GetByProductName?txtproductName=" + txtproductName.val())
+    $.getJSON("api/Products/GetByProductName?txtProductName=" + txtProductSearch.val())
     .done(function (data) {
+
+        $('#products tbody > tr').remove();
+
         $.each(data, function (index, value) {
+            $('#products tbody').append('<tr><td>product: ' + value.Name + ', market: ' + value.MarketDescrip + '</td></tr>');
+        });
 
-            addProgress = 100;
+        addProgress = 100;
 
-            $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
+        $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
 
-            $('#overallProgressHeader').removeClass("progress-striped active");
-        })
-    });
+        $('#overallProgressHeader').removeClass("progress-striped active");
+    })
+      .fail(function (data) {
+          addProgress = 100;
+
+          $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
+          $('#overallProgressHeader').removeClass("progress-striped active");
+
+          $('#spanGeneralError').text(data.statusText + ". " + data.responseText);
+          $('#generalExceptionMessage').show();
+      });
+}
+
+
+function getByProductNameWithoutSession() {
+    var addProgress = 50;
+
+    $('#overallProgressHeader').addClass("progress-striped active");
+    $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
+
+    $.getJSON("api/Products/GetByProductNameWithoutSession?txtProductName=" + txtProductSearch.val())
+    .done(function (data) {
+
+        $('#products tbody > tr').remove();
+
+        $.each(data, function (index, value) {
+            $('#products tbody').append('<tr><td>product: ' + value.Name + ', market: ' + value.MarketDescrip + '</td></tr>');
+        });
+
+        addProgress = 100;
+
+        $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
+
+        $('#overallProgressHeader').removeClass("progress-striped active");
+    })
+      .fail(function (data) {
+          addProgress = 100;
+
+          $('#overallProgress').css('width', addProgress + '%').attr('aria-valuenow', addProgress);
+          $('#overallProgressHeader').removeClass("progress-striped active");
+
+          $('#spanGeneralError').text(data.statusText + ". " + data.responseText);
+          $('#generalExceptionMessage').show();
+      });
 }

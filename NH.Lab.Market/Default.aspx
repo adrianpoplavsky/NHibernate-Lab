@@ -20,7 +20,7 @@
                     <div class="panel-body">
                         <p>
                             Create from the mappings
-                        <asp:Button runat="server" ID="btnCreateSchema" class="btn btn-primary" role="button" Text="Create" OnClientClick="createSchema(); return false;"  />
+                        <asp:Button runat="server" ID="btnCreateSchema" class="btn btn-primary" role="button" Text="Create" OnClientClick="createSchema(); return false;" />
                         </p>
                         <p>
                             Check mappings
@@ -104,36 +104,29 @@
                             <label>Nombre a buscar</label><asp:TextBox ID="txtNameSearch" class="form-control" runat="server"></asp:TextBox>
                         </p>
                         <p>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary" ><i class="glyphicon glyphicon-search"></i> Search</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Search</asp:LinkButton>
                         </p>
-                        <p>
-                            <asp:GridView class="form-control" ID="grdMarkets" runat="server"></asp:GridView>
-                        </p>
-
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Buscar Product</h3>
+                        <h3 class="panel-title">Find Products</h3>
                     </div>
 
                     <div class="panel-body">
                         <p>
-                            <label>Nombre a buscar</label><asp:TextBox ID="txtProductSearch" class="form-control" runat="server"></asp:TextBox>
+                            <label>Name like:</label><asp:TextBox ID="txtProductSearch" class="form-control" runat="server"></asp:TextBox>
                         </p>
                         <p>
-                            With MARKET being a Lazy member (only fetched when needed), the Databind tries to get the value from Product.MarketDescrip, so this must happen inside a session otherwise an error will occur saying that the
+                            With MARKET being a Lazy member (only fetched when needed), Product.MarketDescrip must be obtained inside the session scope. Check both approaches.
                         </p>
                         <p>
-                            <asp:Button runat="server" ID="btnProductSearch" class="btn btn-primary" role="button" Text="Search inside session" OnClientClick="getByProductName(txtproductName);return false;" />
+                            <asp:Button runat="server" ID="btnProductSearch" class="btn btn-primary" role="button" Text="Search inside session" OnClientClick="getByProductName();return false;" />
                         </p>
                         <p>
-                            <asp:GridView ID="grdProductResults" runat="server"></asp:GridView>
-                        </p>
-                        <p>
-                            <asp:Button runat="server" ID="btnProductSearchNoSession" class="btn btn-primary" role="button" Text="Search with no session" OnClientClick="getByProductName(txtproductName);return false;" />
+                            <asp:Button runat="server" ID="btnProductSearchNoSession" class="btn btn-primary" role="button" Text="Search with no session" OnClientClick="getByProductNameWithoutSession();return false;"  />
                         </p>
 
 
@@ -148,6 +141,7 @@
 
                     <div class="panel-body">
                         <table style="width: 100%;" id="products">
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
@@ -155,14 +149,15 @@
         </div>
     </div>
     <script>
-            var ddlMarkets = $("#<%=ddlMarkets.ClientID %>");
+        var ddlMarkets = $("#<%=ddlMarkets.ClientID %>");
         var ddlMarketsForProducts = $("#<%=ddlMarketForProduct.ClientID %>");
         var txtProductName = $("#<%=txtProductName.ClientID %>");
         var ddlMarketForProduct = $("#<%=ddlMarketForProduct.ClientID %>");
         var txtNombre = $("#<%=txtNombre.ClientID %>");
         var txtAddress = $("#<%=txtAddress.ClientID %>");
         var ddlProducts = $("#<%=ddlProducts.ClientID %>");
-
+        var txtProductSearch = $("#<%=txtProductSearch.ClientID %>");
+        
         $(document).ready(function () { getProducts(ddlProducts); });
         $(document).ready(function () { getMarkets(ddlMarkets, ddlMarketsForProducts); });
     </script>

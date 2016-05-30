@@ -50,6 +50,7 @@
     <Compile Include="Domain\LightMarket.cs" />
     <Compile Include="Domain\Market.cs" />
     <Compile Include="Domain\Product.cs" />
+    <Compile Include="Helpers\NHConfigurationUtils.cs" />
     <Compile Include="Helpers\NhibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
