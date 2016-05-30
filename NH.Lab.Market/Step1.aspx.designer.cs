@@ -10,7 +10,8 @@
 namespace NH.Lab.Market {
     
     
-    public partial class _Default {
+    public partial class Step1
+    {
         
         /// <summary>
         /// btnCreateSchema control.

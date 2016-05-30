@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NH.Lab.Market._Default" %>
+﻿<%@ Page Title="NHLab - Step 1" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Step1.aspx.cs" Inherits="NH.Lab.Market.Step1" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
